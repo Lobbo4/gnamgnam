@@ -8,18 +8,18 @@ using namespace std;
 #define N_LIVELLI 5
 
 const char  VUOTO = ' ',
-			GIOCATORE = 'C',
-			OGGETTO = '!',
-			OSTACOLO = '#',
-			CONTORNO_OZ = '-',
-			CONTORNO_VT = '|';
+	    GIOCATORE = 'C',
+	    OGGETTO = '!',
+	    OSTACOLO = '#',
+	    CONTORNO_OZ = '-',
+	    CONTORNO_VT = '|';
 
 char prendiInput() {
     char key;
     
-	key = getch();
+    key = getch();
 
-	return key;
+    return key;
 }
 
 void gameOver() {
@@ -86,16 +86,16 @@ void riempiArea(char g[DIM][DIM]) {
         	
         	g[y][x] = VUOTO;
         	
-            if ( random > 800 && random <= 950 ) g[y][x] = OSTACOLO;
-            if ( random > 950 ) g[y][x] = OGGETTO;
+    		if ( random > 800 && random <= 950 ) g[y][x] = OSTACOLO;
+            	if ( random > 950 ) g[y][x] = OGGETTO;
         }
     }
 }
 
 void generaOggetti(char g[DIM][DIM], int P) {
 	const int   RANGE = 1000,
-				GENERAZIONE_MAX = 5,
-				OFFSET = 100;
+		    GENERAZIONE_MAX = 5,
+		    OFFSET = 100;
 	
 	int chance = RANGE - RANGE*(float)P/PUNTEGGIO_MAX;
 	
@@ -172,17 +172,17 @@ void contorni(char g[DIM][DIM]) {
 }
 
 int main() {
-	srand(time(NULL));
+    srand(time(NULL));
 	
-	bool inVita = true;
+    bool inVita = true;
 	
     char griglia[DIM][DIM];
     char input;
     Vec2 Pos;
     
     int Punteggio = 0, 
-		livello = 1,
-		punteggioDaRaggiungere;
+	livello = 1,
+	punteggioDaRaggiungere;
     
     riempiArea(griglia);
     contorni(griglia);
@@ -206,8 +206,8 @@ int main() {
 			Pos.x = Pos.y = DIM/2;
 			
 			riempiArea(griglia);
-    		contorni(griglia);
-    		Punteggio = 0;
+    			contorni(griglia);
+    			Punteggio = 0;
 			
 			if ( livello >= N_LIVELLI )
 			{
