@@ -89,7 +89,7 @@ void riempiArea(char g[DIM][DIM]) {
 }
 
 void generaOggetti(char g[DIM][DIM], int P) {
-	const int   RANGE = 1000,
+	const int   RANGE = 10000,
 		    GENERAZIONE_MAX = 5,
 		    OFFSET = 100;
 	
