@@ -15,11 +15,7 @@ const char  VUOTO = ' ',
 	    CONTORNO_VT = '|';
 
 char prendiInput() {
-    char key;
-    
-    key = getch();
-
-    return key;
+    return getch();
 }
 
 void gameOver() {
